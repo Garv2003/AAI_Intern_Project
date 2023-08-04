@@ -8,7 +8,7 @@ const contractSchema = new Schema({
     contracttype:String,
     contractstartdate:String,
     contractenddata:String,
-    description:string
+    description:String
   });
   
 

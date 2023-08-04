@@ -6,6 +6,7 @@ const session = require('express-session');
 const passport = require('./auth/passport');
 const mongoose = require('mongoose');
 const MongoStore = require('connect-mongo');
+const Contract=require('./models/contract')
 app.set('view engine', 'hbs');
 app.use(express.static(__dirname + '/public'));
 app.use(express.urlencoded({ extended: true }));
@@ -46,7 +47,7 @@ app.get('/logout', function(req, res, next) {
 
 app.post('/addcontract',(req,res)=>{
   const{}=req.body;
-  
+
 })
 
 mongoose.connect('mongodb://127.0.0.1/testdb')
