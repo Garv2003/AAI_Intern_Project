@@ -29,7 +29,7 @@
                 </div>
             </div>
             <div class="sidebar">
-                <a href="#">
+                <a href="/Dashboard">
                     <span class="material-symbols-sharp">
                         grid_view
                     </span>
@@ -41,7 +41,7 @@
                     </span>
                     <h3>Details</h3>
                 </a>
-                <a href="#">
+                <a href="/aboutus">
                     <span class="material-symbols-sharp">
                         grid_view
                     </span>
@@ -58,7 +58,7 @@
         <main>
             <h1>Dashboard</h1>
             <div class="insights">
-                <div class="orders">
+                <div class="orders" id="total">
                     <span class="material-symbols-outlined">analytics</span>
                     <div class="middle">
                         <div class="left">
@@ -111,7 +111,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <tbody>
+                    <tbody class="totalcontract">
                         {{#each contract as |p|}}
                         <tr>
                             <td>{{p.Contract_ID}}</td>
@@ -121,10 +121,35 @@
                             <td>{{p.Contract_StartDate}}</td>
                             <td>{{p.Contract_EndData}}</td>
                             <td>{{p.Description}}</td>
-                        </tr>'
+                        </tr>
                         {{/each}}
                     </tbody>
-
+                    <tbody id="revenue" class="hidden">
+                         {{#each revenue as |p|}}
+                        <tr>
+                            <td>{{p.Contract_ID}}</td>
+                            <td>{{p.Contract_Name}}</td>
+                            <td>{{p.Contract_Status}}</td>
+                            <td>{{p.Contract_Type}}</td>
+                            <td>{{p.Contract_StartDate}}</td>
+                            <td>{{p.Contract_EndData}}</td>
+                            <td>{{p.Description}}</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                    <tbody id="capital1" class="hidden">
+                        {{#each capital as |p|}}
+                        <tr>
+                            <td>{{p.Contract_ID}}</td>
+                            <td>{{p.Contract_Name}}</td>
+                            <td>{{p.Contract_Status}}</td>
+                            <td>{{p.Contract_Type}}</td>
+                            <td>{{p.Contract_StartDate}}</td>
+                            <td>{{p.Contract_EndData}}</td>
+                            <td>{{p.Description}}</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
                 </table>
                 <!-- <a href="#">Show All</a> -->
             </div>
@@ -160,7 +185,7 @@
         </div>
     </div>
 
-    <script src="index2.js"></script>
+    <script src="./js/script1.js"></script>
     <script>
         // This script disables the back button after logout
         window.history.pushState(null, null, document.URL);
