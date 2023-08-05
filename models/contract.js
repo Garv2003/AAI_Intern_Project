@@ -1,14 +1,18 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
-
+const Users=require('./users')
 const contractSchema = new Schema({
-    contractID:String,
-    contractname:String,
-    contractstatus:String,
-    contracttype:String,
-    contractstartdate:String,
-    contractenddata:String,
-    description:String
+    Contract_ID:String,
+    Contract_Name:String,
+    Contract_Status:String,
+    Contract_Type:String,
+    Contract_StartDate:String,
+    Contract_EndData:String,
+    Description:String,
+    User_id:{
+      type: Schema.Types.ObjectId,
+      ref:Users
+    }
   });
   
 

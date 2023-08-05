@@ -11,20 +11,20 @@
 <body>
     <div class="container">
         <div class="title">Add Contract</div>
-        <form action="adddbcon.php" method="POST">
+        <form action="/addcontract" method="POST">
         <div class="Contract-details">
             <div class="input-box">
                 <span class="details">Contract ID</span>
-                <input type="text" name="contractid" placeholder="Contract ID" required>
+                <input type="text" name="Contract_ID" placeholder="Contract ID" required>
             </div>
             <div class="input-box">
                 <span class="details">Contract Name</span>
-                <input type="text" name="contractname" placeholder="Contract Name" required>
+                <input type="text" name="Contract_Name" placeholder="Contract Name" required>
             </div>
             <div class="input-box">
                 <span class="details">Status</span>
                     <div class="select-box">
-                      <select name="status">
+                      <select name="Contract_Status">
                         <option hidden>Status</option>
                         <option>Active</option>
                         <option>Expired</option>
@@ -34,7 +34,7 @@
             <div class="input-box">
                 <span class="details">Contract Type</span>
                 <div class="select-box">
-                    <select name="Contracttype">
+                    <select name="Contract_Type">
                       <option hidden>Contract type</option>
                       <option>Revenue Expenditure</option>
                       <option>Capital expenditure</option>
@@ -43,15 +43,15 @@
             </div>
             <div class="input-box">
                 <span class="details">Start Date</span>
-                <input type="date" placeholder="Start Date" name="startdate" required>
+                <input type="date" placeholder="Start Date" name="Contract_StartDate" required>
             </div>
             <div class="input-box">
                 <span class="details">End Date</span>
-                <input type="date" placeholder="End Date" name="enddate" required>
+                <input type="date" placeholder="End Date" name="Contract_EndData" required>
             </div>
             <div class="input-box">
                 <span class="details">Description</span>
-                <input type="text" placeholder="Description" name="description" required>
+                <input type="text" placeholder="Description" name="Description" required>
             </div>
             <div class="button">
                 <input type="submit" name="submit" value="Submit">

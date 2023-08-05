@@ -6,17 +6,18 @@ const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
 router.get('/', (req, res) => {
-    res.render('signup');
+    res.render('login');
 });
 
 router.post('/', async (req, res) => {
     const { email, password } = req.body;
+    console.log(req.body)
     console.log(email, password);
     let username = email;
     try {
         let user = await User.findOne({ username });
         if (user) {
-            res.render('login', {
+            res.render('/login', {
                 msg: "User is Already Present"
             });
         }
@@ -25,7 +26,8 @@ router.post('/', async (req, res) => {
                 bcrypt.hash(password, salt, async function (err, hash) {
                     await User.create({
                         username,
-                        password:hash
+                        password:hash,
+                        name:req.body.name
                     })
                     res.render('login', {
                         msg: "Signup Success"

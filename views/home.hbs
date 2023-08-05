@@ -64,31 +64,31 @@
                         <div class="left">
                             <h3>Total Contracts</h3>
                             <h1>
-    
+                                {{contract.length}}
                             </h1>
                         </div>
                     </div>
                 </div>
-              
+
                 <div class="revenue" id="revenueBox">
                     <span class="material-symbols-outlined">bar_chart</span>
                     <div class="middle">
                         <div class="left">
                             <h3>Revenue Expenditure Contracts</h3>
                             <h1>
-                           
+                                {{revenue.length}}
                             </h1>
                         </div>
                     </div>
                 </div>
-              
+
                 <div class="capital">
                     <span class="material-symbols-outlined">bar_chart</span>
                     <div class="middle">
                         <div class="left">
                             <h3>Capital Expenditure Contracts</h3>
                             <h1>
-             
+                                {{capital.length}}
                             </h1>
                         </div>
                     </div>
@@ -112,15 +112,15 @@
                     </thead>
                     <tbody>
                     <tbody>
-                        {{#each posts as |p|}}
+                        {{#each contract as |p|}}
                         <tr>
-                            <td>' . $row["Contract Id"] . '</td>
-                            <td>' . $row["Contract Name"] . '</td>
-                            <td>' . $row["Status"] . '</td>
-                            <td>' . $row["Contract Type"] . '</td>
-                            <td>' . $row["Start Date"] . '</td>
-                            <td>' . $row["End Date"] . '</td>
-                            <td>' . $row["Description"] . '</td>
+                            <td>{{p.Contract_ID}}</td>
+                            <td>{{p.Contract_Name}}</td>
+                            <td>{{p.Contract_Status}}</td>
+                            <td>{{p.Contract_Type}}</td>
+                            <td>{{p.Contract_StartDate}}</td>
+                            <td>{{p.Contract_EndData}}</td>
+                            <td>{{p.Description}}</td>
                         </tr>'
                         {{/each}}
                     </tbody>
@@ -129,7 +129,7 @@
                 <!-- <a href="#">Show All</a> -->
             </div>
         </main>
-   
+
         <div class="right">
             <div class="top">
                 <button type="menu" id="menu-btn">
@@ -149,7 +149,7 @@
       </div> -->
                 <div class="profile">
                     <div class="info">
-                        <p>Hey, <b>{{username}}</b></p>
+                        <p>Hey, <b>{{name}}</b></p>
                         <small class="text-muted">Admin</small>
                     </div>
                     <div class="profile-photo">
