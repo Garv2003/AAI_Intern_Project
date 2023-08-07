@@ -9,6 +9,7 @@ const MongoStore = require("connect-mongo");
 const Contract = require("./models/contract");
 app.set("view engine", "hbs");
 app.use(express.static(__dirname + "/public"));
+app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 app.use(
   session({
@@ -25,12 +26,11 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use("/", require("./routes/login"));
-
 app.use("/signup", require("./routes/signup"));
 
-app.get("/home", async (req, res) => {
-  console.log(req.user);
-
+app.get("/details", async (req, res) => {
+  const currentDate = new Date().toISOString().split('T')[0];
+  console.log(currentDate)
   Contract.find({}).then((contract) => {
     Contract.find()
       .where({ Contract_Type: "Revenue Expenditure" })
@@ -67,7 +67,7 @@ app.post("/addcontract", (req, res) => {
     User_id: req.user._id,
   });
   newContract.save().then((r) => {
-    res.redirect("/home");
+    res.redirect("/details");
   });
 });
 
@@ -78,10 +78,6 @@ app.get("/logout", function (req, res, next) {
     }
     res.redirect("/");
   });
-});
-
-app.post("/addcontract", (req, res) => {
-  const {} = req.body;
 });
 
 mongoose

@@ -12,12 +12,11 @@ router.get('/', (req, res) => {
 router.post('/', async (req, res) => {
     const { email, password } = req.body;
     console.log(req.body)
-    console.log(email, password);
     let username = email;
     try {
         let user = await User.findOne({ username });
         if (user) {
-            res.render('/login', {
+            res.render('login', {
                 msg: "User is Already Present"
             });
         }
@@ -40,7 +39,6 @@ router.post('/', async (req, res) => {
     catch (err) {
         res.send(err);
     }
-
 })
 
 

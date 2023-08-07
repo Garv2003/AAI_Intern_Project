@@ -7,11 +7,9 @@
     <title>Airports Authority of India</title>
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
-
 <body>
-
     <header>
         <h1 class="heading">Contract Management System</h1>
         <h3 class="title">Login & Registration</h3>
@@ -46,17 +44,16 @@
                 </form>
 
                 <!-- signup form -->
-                <form action="/signup" method="POST">
+                <form  class="signup-form">
                     <div class="signup-box">
                         <div class="name-input">
                             <input type="text" class="name ele" placeholder="Enter your name" name="name" id="name">
                         </div>
                         <div class="email-input">
-                            <input type="email" class="email ele" placeholder="username@email.com" id="username"
-                                name="email">
+                            <input type="text" class="email ele"  placeholder="username@email.com"  name="email" id="email">
                         </div>
                         <div class="password-input">
-                            <input type="password" class="password ele" placeholder="Password" name="password" id="password">
+                            <input type="password" class="password ele"  placeholder="Password" name="password" id="spassword">
                         </div>
                         <div class="password-confirm-input">
                             <div class="password-input">

@@ -676,3 +676,12 @@ form .button input{
 form .button input:hover{
     background: linear-gradient(-135deg,#71b7e6,#af68cb);
 } */
+
+.user{
+    background-color:cornflowerblue;
+    color: black;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+}

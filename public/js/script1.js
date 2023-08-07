@@ -47,3 +47,8 @@ button3.addEventListener("click", () => {
   capital1.classList.remove("hidden");
   revenue.classList.add('hidden')
 });
+
+const btn=document.querySelector('.user')
+btn.addEventListener("click",()=>{
+  
+})
