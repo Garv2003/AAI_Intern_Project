@@ -68,6 +68,4 @@ signupform.addEventListener("submit", (e) => {
   user.value="";
   password.value=""
   confirmp.value=""
-  slider.classList.add("moveslider");
-  formSection.classList.add("form-section-move");
 });

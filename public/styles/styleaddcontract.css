@@ -6,8 +6,10 @@
   font-family: "Poppins", sans-serif;
 }
 /* body {
+    width: 1000px;
     min-height: 100vh;
     display: flex;
+    border: 1px solid black;
     align-items: center;
     padding: 10px;
     justify-content: center; 
@@ -15,18 +17,24 @@
 } */
 .container1{
     max-width: 700px;
-    /* width: 100%; */
+    margin: auto;
+    width: 100%;
     background: #fff;
+    border: 1px solid black;
     padding: 25px 30px;
     border-radius: 5px;
+    position: absolute;
+    top:200px;
+    left: 400px;
+    background:linear-gradient(135deg,#71b7e6,#ecdff1)
 }
-.container .title{
+.container1 .title{
     font-size: 25px;
     font-weight: 500;
     position: relative;
     text-align: center;
 }
-.container .title::before{
+.container1 .title::before{
     content: '';
     position: absolute;
     left: 10;
@@ -35,7 +43,7 @@
     width: 170px;
     background:linear-gradient(135deg,#71b7e6,#ecdff1)
 }
-.container form .Contract-details{
+.container1 form .Contract-details{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;

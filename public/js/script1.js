@@ -28,8 +28,8 @@ button1.addEventListener("click", () => {
   if (totalcontract.classList != "hidden") {
     totalcontract.classList.remove("hidden");
   }
-  revenue.classList.add("hidden")
-  capital1.classList.add("hidden")
+  revenue.classList.add("hidden");
+  capital1.classList.add("hidden");
 });
 
 const button2 = document.querySelector("#revenueBox");
@@ -38,17 +38,30 @@ button2.addEventListener("click", () => {
     revenue.classList.remove("hidden");
   }
   totalcontract.classList.add("hidden");
-  capital1.classList.add('hidden')
+  capital1.classList.add("hidden");
 });
 
 const button3 = document.querySelector(".capital");
 button3.addEventListener("click", () => {
   totalcontract.classList.add("hidden");
   capital1.classList.remove("hidden");
-  revenue.classList.add('hidden')
+  revenue.classList.add("hidden");
 });
 
-const btn=document.querySelector('.user')
-btn.addEventListener("click",()=>{
-  
+const btn = document.querySelector(".user");
+const popup = document.querySelector(".container1");
+const body=document.querySelector('body');
+btn.addEventListener("click", () => {
+  if (popup.classList == "container1 hidden") {
+    popup.classList.remove("hidden");
+  } else {
+    popup.classList.add("hidden");
+  }
+});
+
+
+body.addEventListener("click",()=>{
+  if(popup.classList=="container1"){
+    console.log("nnknkn")
+  }
 })
