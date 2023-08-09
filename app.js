@@ -6,11 +6,12 @@ const session = require("express-session");
 const passport = require("./auth/passport");
 const mongoose = require("mongoose");
 const MongoStore = require("connect-mongo");
-const Contract = require("./models/contract");
+
 app.set("view engine", "hbs");
 app.use(express.static(__dirname + "/public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 app.use(
   session({
     secret: "asdjbaskdadbaskdv",

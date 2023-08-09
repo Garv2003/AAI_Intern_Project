@@ -40,32 +40,37 @@ login.addEventListener("click", () => {
 //     });
 
 const signupform = document.querySelector(".signup-form");
-const name=document.querySelector('.name');
-const user=document.querySelector('#email')
-const password=document.querySelector('#spassword');
-const confirmp=document.querySelector('#Confirm password')
+const name = document.querySelector(".name");
+const user = document.querySelector("#email");
+const password = document.querySelector("#spassword");
+const confirmp = document.querySelector("#confirm-password");
+const signdiv = document.querySelector(".signup-box");
 signupform.addEventListener("submit", (e) => {
   e.preventDefault();
-  console.log(name.value)
-  console.log(user.value)
-  console.log(password.value)
-  let data={
-    name:name.value,
-    email:user.value,
-    password:password.value
-  }
+  let data = {
+    name: name.value,
+    email: user.value,
+    password: password.value,
+  };
   axios({
-    method: 'post',
+    method: "post",
     url: "http://localhost:4444/signup/",
-    headers: {}, 
+    headers: {},
     data: {
-      name:name.value,
-      email:user.value,
-      password:password.value
-    }
+      name: name.value,
+      email: user.value,
+      password: password.value,
+    },
+  }).then((res) => {
+    console.log(res.data);
+    var element = document.createElement("div");
+    element.appendChild(
+      document.createTextNode("The man who mistook his wife for a hat")
+    );
+    document.querySelector("#message").appendChild(element);
   });
-  name.value="";
-  user.value="";
-  password.value=""
-  confirmp.value=""
+  name.value = "";
+  user.value = "";
+  password.value = "";
+  confirmp.value = "";
 });
