@@ -50,18 +50,22 @@ button3.addEventListener("click", () => {
 
 const btn = document.querySelector(".user");
 const popup = document.querySelector(".container1");
-const body=document.querySelector('body');
+const overlay=document.querySelector('#overlay');
 btn.addEventListener("click", () => {
   if (popup.classList == "container1 hidden") {
     popup.classList.remove("hidden");
+    overlay.classList.remove("hidden")
+
   } else {
     popup.classList.add("hidden");
+    overlay.classList.add("hidden")
   }
 });
 
 
-body.addEventListener("click",()=>{
+overlay.addEventListener("click",()=>{
   if(popup.classList=="container1"){
-    console.log("nnknkn")
+    overlay.classList.add("hidden");
+    popup.classList.add("hidden");
   }
 })

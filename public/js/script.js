@@ -65,7 +65,7 @@ signupform.addEventListener("submit", (e) => {
     console.log(res.data);
     var element = document.createElement("div");
     element.appendChild(
-      document.createTextNode("The man who mistook his wife for a hat")
+      document.createTextNode("Sign Up sucessfully")
     );
     document.querySelector("#message").appendChild(element);
   });
