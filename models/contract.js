@@ -9,6 +9,11 @@ const contractSchema = new Schema({
     Contract_StartDate:String,
     Contract_EndData:String,
     Description:String,
+    Price_Order_Number:Number,
+    Billing_Cycle:String,
+    LastInvoice_Date:String,
+    Contract_Price:Number,
+    Modified_Date:String,
     User_id:{
       type: Schema.Types.ObjectId,
       ref:Users

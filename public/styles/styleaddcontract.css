@@ -5,128 +5,164 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-/* body {
-    width: 1000px;
-    min-height: 100vh;
-    display: flex;
-    border: 1px solid black;
-    align-items: center;
-    padding: 10px;
-    justify-content: center; 
-    background:linear-gradient(135deg,#71b7e6,#ecdff1)
-} */
-.container1{
-    max-width: 700px;
-    margin: auto;
-    width: 100%;
-    background: #fff;
-    border: 1px solid black;
-    padding: 25px 30px;
-    border-radius: 10px;
-    position: fixed;
-    top:50%;
-    left:50%;
-    transform: translate(-50%,-50%);
-    z-index: 10;
-    background:linear-gradient(135deg,#71b7e6,#ecdff1)
+.container1 {
+  max-width: 700px;
+  margin: auto;
+  width: 100%;
+  background: #fff;
+  border: 1px solid black;
+  padding: 25px 30px;
+  border-radius: 10px;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  z-index: 10;
+  transform: translate(-50%, -50%) scale(.1);
+  background: linear-gradient(135deg, #71b7e6, #ecdff1);
+  transition: transform 0.4s, right 0.4s;
+  visibility: hidden;
 }
-.container1 .title{
-    font-size: 25px;
-    font-weight: 500;
-    position: relative;
-    text-align: center;
+.open-container1{
+  max-width: 700px;
+  margin: auto;
+  width: 100%;
+  background: #fff;
+  border: 1px solid black;
+  padding: 25px 30px;
+  border-radius: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  transform: translate(-50%, -50%) scale(1);
+  background: linear-gradient(135deg, #71b7e6, #ecdff1);
+  visibility: visible;
 }
-.container1 .title::before{
-    content: '';
-    position: absolute;
-    left: 10;
-    bottom: 0;
-    height: 3px;
-    width: 170px;
-    background:linear-gradient(135deg,#71b7e6,#ecdff1)
+.container1 .title {
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+  text-align: center;
 }
-.container1 form .Contract-details{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 20px 0 12px 0;
+.container1 .title::before {
+  content: "";
+  position: absolute;
+  left: 10;
+  bottom: 0;
+  height: 3px;
+  width: 170px;
+  background: linear-gradient(135deg, #71b7e6, #ecdff1);
 }
-form .Contract-details .input-box{
-    position: relative;
-    margin-bottom: 20px;
-    width: calc(100% / 2 - 20px);
+.container1 form .Contract-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
 }
-.Contract-details .input-box .details{
-    display: block;
-    font-weight: 500;
-    margin-bottom: 5px;
+form .Contract-details .input-box {
+  position: relative;
+  margin-bottom: 20px;
+  width: calc(100% / 2 - 20px);
+}
+.Contract-details .input-box .details {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
 }
 
-.Contract-details .input-box input{
-    position: relative;
-    height: 45px;
-    width: 100%;
-    outline: none;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    padding-left: 15px;
-    font-size: 16px;
-    border-bottom-width: 3px;
-    transition: all 0.3s ease;
+.Contract-details .input-box input {
+  position: relative;
+  height: 45px;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding-left: 15px;
+  font-size: 16px;
+  border-bottom-width: 3px;
+  transition: all 0.3s ease;
 }
-.select-box select{
-    height: 45px;
-    width: 100%;
-    outline: none;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding-left: 15px;
-    font-size: 16px;
-    border-bottom-width: 3px;
-    transition: all 0.3s ease;
+.select-box select {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding-left: 15px;
+  font-size: 16px;
+  border-bottom-width: 3px;
+  transition: all 0.3s ease;
 }
 .Contract-details .input-box input:focus,
-.Contract-details .input-box input:valid{
-    border-color: #814797;
+.Contract-details .input-box input:valid {
+  border-color: #814797;
 }
-
 .select-box select:focus,
-.select-box select::selection{
-    border-color: #814797;
+.select-box select::selection {
+  border-color: #814797;
 }
-
-form .button{
-    height:45px;
-    margin:45px 0;
+form .button {
+  height: 45px;
+  margin: 45px 0;
 }
-form .button input{
-    height:100%;
-    width:100%;
-    outline: none;
-    color:#fff;
-    border: none;
-    font-size: 18px;
-    font-weight: 500;
-    border-radius: 5px;
-    letter-spacing: 1px;
-    background: linear-gradient(135deg,#71b7e6,#af68cb);
+form .button input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  background: linear-gradient(135deg, #71b7e6, #af68cb);
 }
-form .button input:hover{
-    background: linear-gradient(-135deg,#71b7e6,#af68cb);
+form .button input:hover {
+  background: linear-gradient(-135deg, #71b7e6, #af68cb);
 }
-@media (max-width: 584px){
-    .container{
-        max-width: 100%;
-    }
-    form .Contract-details .input-box{
-        margin-bottom: 15px;
-        width: 100%;
-    }
-    .container form .Contract-details{
-        max-height: 300px;
-        overflow-y: scroll;
-    }
-    .Contract-details ::-webkit-scrollbar{
-        width: 0;
-    }
+.popupmenu {
+  width: 500px;
+  height: 500px;
+  background: linear-gradient(135deg, #71b7e6, #ecdff1);
+  border-radius: 10px;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+  visibility: hidden;
+  transition: transform 0.4s, top 0.4s;
+}
+.open-popupmenu {
+  width: 500px;
+  height: 500px;
+  background-color: #71b7e6;
+  border-radius: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  transform: translate(-50%, -50%) scale(1);
+  visibility: visible;
+}
+@media (max-width: 584px) {
+  .container1 {
+    max-width: 100%;
+  }
+  form .Contract-details .input-box {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  .container form .Contract-details {
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .Contract-details ::-webkit-scrollbar {
+    width: 0;
+  }
+}
+.bpopup{
+    background-color:transparent;
+    /* background: transparent; */
+    width: 30px;
+    cursor: pointer;
 }
