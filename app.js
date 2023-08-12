@@ -6,6 +6,7 @@ const session = require("express-session");
 const passport = require("./auth/passport");
 const mongoose = require("mongoose");
 const MongoStore = require("connect-mongo");
+const morgan=require("morgan");
 
 app.set("view engine", "hbs");
 app.use(express.static(__dirname + "/public"));
@@ -26,6 +27,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use(morgan("dev"))
 app.use("/", require("./routes/login"));
 app.use("/signup", require("./routes/signup"));
 app.use("/",require("./routes/Details"));

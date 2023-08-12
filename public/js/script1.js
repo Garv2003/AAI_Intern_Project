@@ -73,12 +73,20 @@ overlay.addEventListener("click", () => {
 
 const popupinfo = document.querySelectorAll("#popupbutton");
 const popupmenu = document.querySelector(".popupmenu");
-
+const info1=document.querySelector(".info1");
+const info2=document.querySelector(".info2");
+const info3=document.querySelector(".info3");
+const info4=document.querySelector(".info4");
+const info5=document.querySelector(".info5");
+const info6=document.querySelector(".info6");
+const info7=document.querySelector(".info7");
+const info8=document.querySelector(".info8");
+const info9=document.querySelector(".info9");
+const info10=document.querySelector(".info10");
 popupinfo.forEach(function (button) {
   button.addEventListener("click", () => {
     var row = event.target.closest("tr"); // Find the parent row
     var rowDataCells = row.querySelectorAll("td"); // Get data cells excluding the last one
-    console.log(rowDataCells[0].innerText);
     axios({
       method: "post",
       url: "http://localhost:4444/getdetails/",
@@ -87,18 +95,17 @@ popupinfo.forEach(function (button) {
         id: rowDataCells[0].innerText,
       },
     }).then((res) => {
-      popupmenu.innerHTML = `<div>
-        <div>Contract_EndData:${res.data.Contract_EndData}</div>
-        <div>Contract_StartDate${res.data.Contract_StartDate}</div>
-        <div>Contract_ID:${res.data.Contract_ID}</div>
-        <div>Billing_Cycle${res.data.Billing_Cycle}</div>
-        <div>${res.data.Contract_Name}</div>
-        <div>${res.data.Contract_Type}</div>
-        <div>${res.data.Contract_Price}</div>
-        <div>${res.data.Contract_Status}</div>
-        <div>${res.data.Modified_Date}</div>
-        <div>${res.data._id}</div>
-        </div>`
+      console.log(res.data);
+      info1.innerText=res.data.Contract_ID
+      info2.innerText=res.data.Contract_Name
+      info3.innerText=res.data.Contract_Status
+      info4.innerText=res.data.Contract_Type
+      info5.innerText=res.data.Contract_StartDate
+      info6.innerText=res.data.Contract_EndData;
+      info7.innerText=res.data.Description
+      info8.innerText=res.data.Contract_Price
+      info9.innerText=res.data.Billing_Cycle
+      info10.innerText=res.data.LastInvoice_Date
     });
     popupmenu.classList.add("open-popupmenu");
     overlay.classList.remove("hidden");

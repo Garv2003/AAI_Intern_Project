@@ -38,7 +38,7 @@ router.post("/addcontract", (req, res) => {
     Description: req.body.Description,
     Price_Order_Number:req.body.Price_Order,
     Billing_Cycle:req.body.Billing_Cycle,
-    LastInvoice_Date:req.body.LastInvoice_Date,
+    LastInvoice_Date:req.body.LastInvoice_Data,
     Contract_Price:req.body.Contract_Price,
     Modified_Date:currentDate,
     User_id: req.user._id,
@@ -49,7 +49,6 @@ router.post("/addcontract", (req, res) => {
 });
 
 router.post("/getdetails",(req,res)=>{
-  console.log(req.body)
   Contract.findById({_id:req.body.id})
   .then((data)=>{
     res.send(data);
