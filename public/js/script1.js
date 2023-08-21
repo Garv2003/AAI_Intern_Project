@@ -1,25 +1,3 @@
-const sideMenu = document.querySelector("aside");
-const menuBtn = document.querySelector("#menu-btn");
-const closeBtn = document.querySelector("#close-btn");
-const themeToggler = document.querySelector(".theme-toggler");
-
-//show slider
-menuBtn.addEventListener("click", () => {
-  sideMenu.style.display = "block";
-});
-
-//close slider
-closeBtn.addEventListener("click", () => {
-  sideMenu.style.display = "none";
-});
-
-//change theme
-themeToggler.addEventListener("click", () => {
-  document.body.classList.toggle("dark-theme-variables");
-
-  themeToggler.querySelector("span:nth-child(1)").classList.toggle("active");
-  themeToggler.querySelector("span:nth-child(2)").classList.toggle("active");
-});
 const totalcontract = document.querySelector(".totalcontract");
 const revenue = document.querySelector("#revenue");
 const capital = document.querySelector("#captial1");
@@ -83,10 +61,11 @@ const info7=document.querySelector(".info7");
 const info8=document.querySelector(".info8");
 const info9=document.querySelector(".info9");
 const info10=document.querySelector(".info10");
+const info11=document.querySelector(".info11")
 popupinfo.forEach(function (button) {
-  button.addEventListener("click", () => {
-    var row = event.target.closest("tr"); // Find the parent row
-    var rowDataCells = row.querySelectorAll("td"); // Get data cells excluding the last one
+  button.addEventListener("click", (event) => {
+    var row = event.target.closest("tr");
+    var rowDataCells = row.querySelectorAll("td");
     axios({
       method: "post",
       url: "http://localhost:4444/getdetails/",
@@ -95,7 +74,7 @@ popupinfo.forEach(function (button) {
         id: rowDataCells[0].innerText,
       },
     }).then((res) => {
-      console.log(res.data);
+      console.log(res)
       info1.innerText=res.data.Contract_ID
       info2.innerText=res.data.Contract_Name
       info3.innerText=res.data.Contract_Status
@@ -106,6 +85,7 @@ popupinfo.forEach(function (button) {
       info8.innerText=res.data.Contract_Price
       info9.innerText=res.data.Billing_Cycle
       info10.innerText=res.data.LastInvoice_Date
+      info11.innerText=res.data.file
     });
     popupmenu.classList.add("open-popupmenu");
     overlay.classList.remove("hidden");

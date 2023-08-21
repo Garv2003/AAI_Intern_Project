@@ -34,12 +34,12 @@
                     </span>
                     <h3>Dashboard</h3>
                 </a>
-                <a href="/details">
+                {{!-- <a href="/details">
                     <span class="material-symbols-sharp">
                         details
                     </span>
                     <h3>Details</h3>
-                </a>
+                </a> --}}
                 <a href="/aboutus">
                     <span class="material-symbols-sharp">
                         grid_view
@@ -95,7 +95,7 @@
                 <h2>Recent Orders</h2>
                 <table>
                     <thead>
-                        <tr>
+                        <tr id="contractinfo">
                             <th>Contract ID</th>
                             <th>Contract name</th>
                             <th>Contract Status</th>
@@ -107,11 +107,11 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <tbody class="totalcontract">
+                    <tbody id="totalcontract">
                         {{#each contract as |p|}}
-                        <tr>
+                        <tr id="contractinfo">
                             <td class="hidden">{{p._id}}</td>
-                            <td>{{p.Contract_ID}}</td>
+                            <td><a href=/details?id={{p._id}}>{{p.Contract_ID}}</a></td>
                             <td>{{p.Contract_Name}}</td>
                             <td>{{p.Contract_Status}}</td>
                             <td>{{p.Contract_Type}}</td>
@@ -128,9 +128,9 @@
                     </tbody>
                     <tbody id="revenue" class="hidden">
                         {{#each revenue as |p|}}
-                        <tr>
+                        <tr id="contractinfo">
                             <td class="hidden">{{p._id}}</td>
-                            <td>{{p.Contract_ID}}</td>
+                            <td><a href=/details?id={{p._id}}>{{p.Contract_ID}}</a></td>
                             <td>{{p.Contract_Name}}</td>
                             <td>{{p.Contract_Status}}</td>
                             <td>{{p.Contract_Type}}</td>
@@ -149,7 +149,7 @@
                         {{#each capital as |p|}}
                         <tr>
                             <td class="hidden">{{p._id}}</td>
-                            <td>{{p.Contract_ID}}</td>
+                            <td><a href=/details?id={{p._id}}>{{p.Contract_ID}}</a></td>
                             <td>{{p.Contract_Name}}</td>
                             <td>{{p.Contract_Status}}</td>
                             <td>{{p.Contract_Type}}</td>
@@ -196,7 +196,7 @@
     <div class="overlay hidden" id="overlay"></div>
     <div class="container1">
         <div class="title">Add Contract</div>
-        <form action="/addcontract" method="POST">
+        <form action="/addcontract" method="POST" enctype=multipart/form-data>
             <div class="Contract-details">
                 <div class="input-box">
                     <span class="details">Contract ID</span>
@@ -254,6 +254,18 @@
                     <span class="details">Contract Price</span>
                     <input type="number" placeholder="Contract Price" name="Contract_Price" required>
                 </div>
+                <div class="input-box">
+                    <span class="details">Project Manager Name</span>
+                    <input type="text" placeholder="Project Manager Name" name="Project_Man_Name" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Project Manager Email</span>
+                    <input type="email" placeholder="Project Manager Email" name="Project_Man_Email" required>
+                </div>
+                <div class="file-box">
+                    <span class="details">Document</span>
+                    <input type="file" placeholder="" name="myfile" required>
+                </div>
                 <div class="button">
                     <input type="submit" name="submit" value="Submit">
                 </div>
@@ -306,6 +318,7 @@
         </div>
     </div>
     <script src="./js/script1.js"></script>
+    <script src="./js/script3.js"></script>
     <script>
         // This script disables the back button after logout
         window.history.pushState(null, null, document.URL);

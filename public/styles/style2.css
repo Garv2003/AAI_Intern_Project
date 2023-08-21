@@ -639,7 +639,28 @@ main .recent-orders a {
   font-size: 22px;
   margin-bottom: 5px;
 }
-.fl{
-  color:floralwhite;
+.file-box {
+  position: relative;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  max-width: 100%;
+  color: #444;
+  padding: 5px;
+}
+input[type=file]::file-selector-button {
+  margin-right: 20px;
+  border: none;
+  background: #084cdf;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+}
+
+input[type=file]::file-selector-button:hover {
+  background: #0d45a5;
+}
+.fl {
+  color: black;
   font-size: 20px;
 }

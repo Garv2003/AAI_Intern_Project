@@ -103,7 +103,8 @@ form .Contract-details .input-box {
 }
 form .button {
   height: 45px;
-  margin: 45px 0;
+  margin: auto;
+  margin-top: 20px;
 }
 form .button input {
   height: 100%;
