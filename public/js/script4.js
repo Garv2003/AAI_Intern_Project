@@ -27,7 +27,9 @@ overlay.addEventListener("click", () => {
 });
 
 const formin = document.querySelector("#formin");
-const id = document.querySelector(".contractid");
+const id = document.querySelector("#contractid");
+console.log(id.getAttribute("value"))
+console.log(id.innerText)
 const info1 = document.querySelector("#info1");
 const info2 = document.querySelector("#info2");
 const info3 = document.querySelector("#info3");

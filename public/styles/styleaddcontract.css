@@ -59,6 +59,22 @@
   justify-content: space-between;
   margin: 20px 0 12px 0;
 }
+.recent-orders .Contract-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+.inventory .Contract-details{
+  width: 49%;
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--box-shadow);
+  background: var(--color-white);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
 form .Contract-details .input-box {
   position: relative;
   margin-bottom: 20px;
@@ -139,7 +155,7 @@ form .button input:hover {
   z-index: 10;
 }
 .open-popupmenu {
-  width: 700px; 
+  width: 700px;
   background-color: #71b7e6;
   border-radius: 10px;
   position: fixed;

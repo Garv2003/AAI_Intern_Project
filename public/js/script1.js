@@ -2,8 +2,9 @@ const totalcontract = document.querySelector(".totalcontract");
 const revenue = document.querySelector("#revenue");
 const capital = document.querySelector("#captial1");
 const button1 = document.querySelector("#total");
+console.log(totalcontract)
 button1.addEventListener("click", () => {
-  if (totalcontract.classList != "hidden") {
+  if (totalcontract.className === "totalcontract hidden") {
     totalcontract.classList.remove("hidden");
   }
   revenue.classList.add("hidden");
@@ -73,8 +74,7 @@ popupinfo.forEach(function (button) {
       data: {
         id: rowDataCells[0].innerText,
       },
-    }).then((res) => {
-      console.log(res)
+    }).then((res) => {  
       info1.innerText=res.data.Contract_ID
       info2.innerText=res.data.Contract_Name
       info3.innerText=res.data.Contract_Status
@@ -85,7 +85,7 @@ popupinfo.forEach(function (button) {
       info8.innerText=res.data.Contract_Price
       info9.innerText=res.data.Billing_Cycle
       info10.innerText=res.data.LastInvoice_Date
-      info11.innerText=res.data.file
+      info11.href=`http://localhost:4444/${res.data.file}`
     });
     popupmenu.classList.add("open-popupmenu");
     overlay.classList.remove("hidden");

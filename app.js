@@ -56,9 +56,10 @@ app.use(
 
 app.use(passport.initialize());
 app.use(passport.session());
-
+//
 const Contract = require("./models/contract");
 const nodemailer = require("nodemailer");
+
 const transporter = nodemailer.createTransport({
   host: "smtp.ethereal.email",
   port: 587,
@@ -81,7 +82,8 @@ async function main(a) {
   console.log("Message sent: %s", info.messageId);
 }
 
-cron.schedule("* * * * *", async () => {
+cron.schedule("5 * * * *", async () => {
+  // cron.schedule('0 3 * * *', async () => {
   const currentDate = new Date();
   const sixMonthsFromNow = new Date();
   sixMonthsFromNow.setMonth(currentDate.getMonth() + 6);

@@ -65,7 +65,7 @@ module.exports.getaboutus = (req, res) => {
 };
 
 module.exports.getcontractdetailsbyid = (req, res) => {
-  Contract.find({ _id: req.query.id })
+  Contract.findById({ _id: req.query.id })
     .populate("Inventory")
     .then((contract) => {
       res.render("details", {
