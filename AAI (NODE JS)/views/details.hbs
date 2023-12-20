@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTRACT DETAIL</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="./styles/style3.css">
+    <link rel="stylesheet" href="./styles/styleaddcontract.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <aside>
+            <div class="top">
+                <div class="logo">
+                    <img src="https://cracku.in/latest-govt-jobs/wp-content/uploads/2020/02/aai-logo.png" alt="">
+                    <h2>Airports Authority Of<br>
+                        India</h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-symbols-outlined">close</span>
+                </div>
+            </div>
+            <div class="sidebar">
+                <a href="/Dashboard">
+                    <span class="material-symbols-sharp">
+                        grid_view
+                    </span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="/details" class="active">
+                    <span class="material-symbols-sharp">
+                        details
+                    </span>
+                    <h3>Details</h3>
+                </a>
+                <a href="/aboutus">
+                    <span class="material-symbols-sharp">
+                        grid_view
+                    </span>
+                    <h3>About Us</h3>
+                </a>
+                <a href="/logout">
+                    <span class="material-symbols-sharp">
+                        logout
+                    </span>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
+        <main>
+            <h1>Contract Details</h1>
+            <div class="insights">
+                <div class="orders" id="total">
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Contract Name</h3>
+                            <h1>
+                                {{contract.Contract_Name}}
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="revenue" id="revenueBox">
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Contract Start Date</h3>
+                            <h1>
+                                {{contract.Contract_StartDate}}
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="capital">
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Contract End Date</h3>
+                            <h1>
+                                {{contract.Contract_EndData}}
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="recent-orders">
+                <div class="Contract-details">
+                    <div class="hidden" id="contractid">{{contract._id}}</div>
+                    <div class="input-box">
+                        <span class="details">Contract ID</span>
+                        <div class="info1 fl">{{contract.Contract_ID}}</div>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Contract Status</span>
+                        <div class="info3 fl">{{contract.Contract_Status}}</div>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Contract Type</span>
+                        <div class="info4 fl">{{contract.Contract_Type}}</div>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Description</span>
+                        <div class="info7 fl">{{contract.Description}}</div>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Price Order Number</span>
+                        <div class="info8 fl">{{contract.Price_Order_Number}}</div>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Billing Cycle</span>
+                        <div class="info9 fl">{{contract.Billing_Cycle}}</div>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Last Invoice Date</span>
+                        <div class="info10 fl">{{contract.LastInvoice_Date}}</div>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">File</span>
+                        <div class="info10 fl"><a href="{{contract.file}}" target="_blank">Invoice</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="inventory">
+                <h1 class="title1">Inventory</h1>
+                <div class="invent">
+                    {{#each contract.Inventory as |p|}}
+                    <div class="Contract-details">
+                        <div class="input-box">
+                            <span class="details">Inventory Serial Number</span>
+                            <div class="info1 fl">{{p.Invent_sno}}</div>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Inventory Model</span>
+                            <div class="info3 fl">{{p.Invent_model}}</div>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Inventory Type</span>
+                            <div class="info4 fl">{{p.Invent_type}}</div>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Start Date</span>
+                            <div class="info7 fl">{{p.Invent_Start_Date}}</div>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">End Date</span>
+                            <div class="info8 fl">{{p.Invent_End_Date}}</div>
+                        </div>
+                        {{!-- <div class="input-box">
+                            <span class="details">End Life Cycle</span>
+                            <div class="info9 fl">{{p.Invent_life_cycle}}</div>
+                        </div> --}}
+                        <div class="input-box">
+                            <span class="details">Purchase Date</span>
+                            <div class="info10 fl">{{p.Purchase_date}}</div>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">File</span>
+                            <div class="info10 fl"><a href="{{p.Invent_Invoice}}" target="_blank">Invoice</a></div>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </main>
+        <div class="right">
+            <div class="top">
+                <button type="menu" id="menu-btn">
+                    <span class="material-symbols-outlined">
+                        menu
+                    </span>
+                </button>
+                <div class="theme-toggler">
+                    <span class="material-symbols-outlined active">light_mode</span>
+                    <span class="material-symbols-outlined">dark_mode</span>
+                </div>
+                <div class="user">
+                    Add New Inventory
+                </div>
+                <div class="profile">
+                    <div class="info">
+                        <p>Hey, <b>{{name}}</b></p>
+                        <small class="text-muted">Welcome back 👋</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay hidden" id="overlay"></div>
+    <div class="container1">
+        <div class="title">Add Inventory</div>
+        <form enctype=multipart/form-data id="formin">
+            <div class="Contract-details">
+                <div class="input-box">
+                    <span class="details">Inventory Serial Number</span>
+                    <input type="text" id="info1" name="Inventory_Serial_Number" placeholder="Inventory Serial Number">
+                </div>
+                <div class="input-box">
+                    <span class="details">Inventory Type</span>
+                    <div class="select-box">
+                        <select name="Inventory_Type" id="info2">
+                            <option hidden>Inventory Type</option>
+                            <option>Switch</option>
+                            <option>Server</option>
+                            <option>UPS</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <span class="details">Inventory Model</span>
+                    <input type="text" id="info3" name="Inventory_Model" placeholder="Inventory Model">
+                </div>
+                {{!-- <div class="input-box" id="date">
+                    <span class="details">Inventory Start Date</span>
+                    <input type="date" id="info4" name="Inventory_Start_Date" placeholder="Inventory Start Date">
+                </div>
+                <div class="input-box">
+                    <span class="details">Inventory End Date</span>
+                    <input type="date" id="info5" name="Inventory End Date" placeholder="Inventory End Date">
+                </div> --}}
+                <div class="input-box">
+                    <span class="details">Inventory End Life Date</span>
+                    <input type="date" id="info6" name="Inventory_End_Life_Date" placeholder="Inventory End Life Date">
+                </div>
+                <div class="file-box">
+                    <span class="details">Invoice Pdf</span>
+                    <input type="file" id="info7" placeholder="PDF" name="myfile">
+                </div>
+                <div class="button">
+                    <input type="submit" name="submit" value="Submit">
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="./js/script3.js"></script>
+    <script src="./js/script4.js"></script>
+</body>
+
+</html>
